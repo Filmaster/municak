@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Přehled produktů{% endblock %}
+{% block content %}
+    <hr>
+    {% for Prukaz in produkt_list %}
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <p><img src="{{ Prukaz.foto.url }}" alt="{{ Prukaz.nazev }}" width="50%"></p>
+            </div>
+            <div class="col-sm-8">
+                <h3><a href="{% url 'detail' Prukaz.pk %}">{{ Prukaz.nazev }}</a></h3>
+                <hr>
+                <p><b>Cena:</b> {{ Prukaz.cena }} kč</p>
+                <hr>
+                <p><b>Prukaz:</b> {{Prukaz.skupiny }}</p>
+        </div>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

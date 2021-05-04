@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail Zboží{% endblock %}
+
+{% block content %}
+    <hr>
+
+    <h2 class="text-center">{{ produkt.nazev }}</h2>
+    <hr>
+    <div class="row">
+        <div class="col text-center">
+            <p><img src="{{ produkt.foto.url }}" alt="{{ produkt.nazev }}" width="75%"></p>
+        </div>
+        <div class="col">
+            <p><b>Cena:</b> {{ produkt.cena }} kč</p>
+            <hr>
+            <p><b>Kategorie:</b> {{produkt.kategorie.typ}}-{{produkt.kategorie.oznaceni_kategorie}}  </p>
+            <hr>
+            <p><b>Prukaz:</b> {{produkt.skupiny }}</p>
+             <hr>
+            <p><b>Popis:</b> {{ produkt.popis }}</p>
+
+        </div>
+    </div>
+{% endblock %}
